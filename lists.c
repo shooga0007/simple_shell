@@ -91,7 +91,7 @@ size_t print_list_str(const list_t *h)
 		h = h->next;
 		i++;
 	}
-	return (i)
+	return (i);
 }
 
 /**
@@ -157,5 +157,3 @@ void free_list(list_t **head_ptr)
 	}
 	*head_ptr = NULL;
 }
-
-	
