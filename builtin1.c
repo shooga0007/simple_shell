@@ -24,7 +24,7 @@ return (0);
 
 int unset_alias(info_t *info, char *str)
 {
-char *p. c;
+char *p, c;
 int ret;
 p = _strchr(str, '=');
 if (!p)
@@ -96,7 +96,7 @@ int i = 0;
 char *p = NULL;
 list_t *node = NULL;
 
-if (info->argv == 1)
+if (info->argc == 1)
 {
 node = info->alias;
 while (node)

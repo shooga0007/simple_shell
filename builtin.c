@@ -37,7 +37,7 @@ return (-2);
  * Return: Always 0
  */
 
-int _mycd(infp_t *info)
+int _mycd(info_t *info)
 {
 char *s, *dir, buffer[1024];
 int chdir_ret;
@@ -62,11 +62,11 @@ if (!_getenv(info, "OLDPWD="))
 {
 _puts(s);
 _putchar('\n');
-return (!);
+return (1);
 }
 _puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 chdir_ret = /*TODO: what should this be? */
-chdir((dir = _getenv(info, "OLDPWD=")) ? : "/");
+chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 }
 else
 chdir_ret = chdir(info->argv[1]);
@@ -78,7 +78,7 @@ _eputs(info->argv[1]), _eputchar('\n');
 else
 {
 _setenv(info, "OLDPWD", _getenv(info, "PWD="));
-_setenv(info, "PWD" getcwd(buffer, 1024));
+_setenv(info, "PWD", getcwd(buffer, 1024));
 }
 return (0);
 }

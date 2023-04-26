@@ -8,8 +8,10 @@
  */
 char **get_environ(info_t *info)
 {
-if (!info->environ = list_to_strings(info->env);
-info->env_chhanged = 0;
+if (!info->environ || info->env_changed)
+{
+info->environ = list_to_strings(info->env);
+info->env_changed = 0;
 }
 
 return (info->environ);
@@ -22,7 +24,9 @@ return (info->environ);
  * Return: 1 on delete, 0 otherwise
  * @var: the string env var property
  */
+
 int _unsetenv(info_t *info, char *var)
+{
 list_t *node = info->env;
 size_t i = 0;
 char *p;
@@ -32,7 +36,7 @@ return (0);
 
 while (node)
 {
-p = starts_with(node->str, var);
+p = _starts_with (node->str, var);
 if (p && *p == '=')
 {
 info->env_changed = delete_node_at_index(&(info->env), i);
@@ -55,6 +59,7 @@ return (info->env_changed);
  * @value: the string env var value
  * Return: Always 0
  */
+
 int _setenv(info_t *info, char *var, char *value)
 {
 char *buf = NULL;
@@ -72,7 +77,7 @@ _strcat(buf, value);
 node = info->env;
 while (node)
 {
-p = starts_with(node->str, var);
+p = _starts_with(node->str, var);
 if (p && *p == '=')
 {
 free(node->str);

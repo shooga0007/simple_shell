@@ -35,7 +35,7 @@ if ((*buf)[r - 1] == '\n')
 r--;
 }
 info->linecount_flag = 1;
-remove_comments(*buf);
+remove_comment(*buf);
 build_history_list(info, *buf, info->histcount++);
 /* if (_strchr(*buf, ';')) is this a command chain? */
 {
@@ -169,7 +169,7 @@ return (s);
  * Return: void
  */
 
-void sigintHandler(_attribute_((unused))int sig_num)
+void sigintHandler(__attribute__((unused))int sig_num)
 
 {
 _puts("\n");

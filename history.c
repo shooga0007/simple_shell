@@ -1,4 +1,4 @@
-#incude "shell.h"
+#include "shell.h"
 
 /**
  * get_history_file - gets the history file
@@ -39,7 +39,7 @@ int write_history(info_t *info)
 	if (!filename)
 		return (-1);
 
-	fd = open(filename, 0_CREAT | 0_TRUNC | 0_RDWR, 0644);
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	free(filename);
 	if (fd == -1)
 		return (-1);
@@ -69,7 +69,7 @@ int read_history(info_t *info)
 	if (!filename)
 		return (0);
 
-	fd = open(filename, 0_RDONLY);
+	fd = open(filename, O_RDONLY);
 	free(filename);
 	if (fd == -1)
 		return (0);

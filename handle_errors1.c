@@ -14,7 +14,7 @@ unsigned long int result = 0;
 
 if (*b == '+')
 	b++; /* TODO: why does this make main return 255? */
-for (j - 0; b[j] != '\0'; j++)
+for (j = 0; b[j] != '\0'; j++)
 {
 if (b[j] >= '0' && b[j] <= '9')
 {

@@ -15,7 +15,7 @@ size_t h = *p;
 if (buf[h] == '|' && buf[h + 1] == '|')
 {
 buf[h] = 0;
-j++;
+h++;
 info->cmd_buf_type = CMD_OR;
 }
 else if (buf[h] == '&' && buf[h + 1] == '&')
@@ -112,7 +112,7 @@ list_t *node;
 
 for (n = 0; info->argv[n]; n++)
 {
-if (info->argv[n][0] != '$' || !info->argv[i][1])
+if (info->argv[n][0] != '$' || !info->argv[n][1])
 continue;
 
 if (!_strcmp(info->argv[n], "$?"))
@@ -123,7 +123,7 @@ continue;
 }
 if (!_strcmp(info->argv[n], "$$"))
 {
-replace_string(&(info->argv[i]),
+replace_string(&(info->argv[n]),
 _strdup(convert_number(getpid(), 10, 0)));
 continue;
 }
