@@ -35,7 +35,7 @@ if ((*buf)[r - 1] == '\n')
 r--;
 }
 info->linecount_flag = 1;
-remove_comment(*buf);
+remove_comments(*buf);
 build_history_list(info, *buf, info->histcount++);
 /* if (_strchr(*buf, ';')) is this a command chain? */
 {

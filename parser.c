@@ -55,7 +55,7 @@ int i = 0, curr_pos = 0;
 char *path;
 if (!pathstr)
 return (NULL);
-if ((_strlen(cmd) > 2) && _starts_with(cmd, "./"))
+if ((_strlen(cmd) > 2) && starts_with(cmd, "./"))
 {
 if (is_cmd(info, cmd))
 return (cmd);
