@@ -112,18 +112,18 @@ int (*func)(info_t *);
 } builtin_table;
 
 /* toem_shloop.c */
-int hsh(info_t *, char **);
+int shooga(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t*);
 void fork_cmd(info_t *);
 
-/*toem_parser.c */
+/*toem_handle_parser.c */
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, chr *);
 
-/* loophsh.c */
-int loophsh(char **);
+/* loopshooga.c */
+int loopshooga(char **);
 
 /* toem_handle_errors.c */
 void _eputs(char *);
@@ -143,7 +143,7 @@ char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-/*toem_exits.c */
+/*toem_quit.c */
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
@@ -166,7 +166,7 @@ int is_delim(char, char *);
 int _isalpha(int);
 int _bett(char *);
 
-/* toem_args.c */
+/* toem_handle_errors1.c */
 int _erratoi(char *);
 void print_error(info_t *, char *);
 int print_d(int, int);
@@ -177,7 +177,7 @@ void remove_comment(char *);
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
-
+®
 /* toem_builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
